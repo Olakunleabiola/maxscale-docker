@@ -132,7 +132,7 @@ $ docker-compose exec maxscale maxctrl list servers
       
    [|Server]  	                              [Address]                 [ Port]                 [Connections]                         [State]   	                                [GTID]                       [ Monitor
 
-|masterdb1 _______________                |	 db1              |_____ 3306   ________  |	  0  ________              |	     Down __________              |       0-3000-4                      |    MariaDB-Monitor |
+|masterdb1 _______________                |	 db1              |_____ 3306   ________  |	  0  ________              |	 Master,running __________              |       0-3000-4                      |    MariaDB-Monitor |
 
 
 [masterdb2 ________________               |	 db12	          |_____ 3306   ________  |       0   ___________          |     Running_____________             |       0-3001-4	                |   MariaDB-Monitor 
