@@ -114,7 +114,7 @@ container maxscaledocker-db1-1 stopped ...
 $ docker-compose exec maxscale maxctrl list servers
 
  
- [|Server]  	                              [Address]                 [ Port]            [Connections]             [State]   	                  [GTID]                            [ Monitor
+ [|Server]  	                                              [Address]                                     [ Port]                              [Connections]                            [State]   	                                          [GTID]                                            [ Monitor
 
 |masterdb1 _______________                |	 db1              |_____ 3306   ________  |	0  _________  |	     Down ______________  |       0-3000-4  ________________   |    MariaDB-Monitor |
 
