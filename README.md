@@ -95,13 +95,12 @@ flag to also remove the volumes.
 To run maxctrl in the container to see the status of the cluster:
 ```
 $ sudo docker-compose exec maxscale maxctrl list servers
-┌─────────┬─────────┬──────┬─────────────┬─────────────────┬──────────┐
-│ Server   │ Address │ Port   │ Connections         │ State                    │ GTID     │Monitor
-├─────────┼─────────┼──────┼─────────────┼─────────────────┼──────────┤
-│ masterdb1 │ db1   │ 3306    │    0             │ Master, Running        │    0-3000-4 │ MariaDB-Monitor
-├─────────┼─────────┼──────┼─────────────┼─────────────────┼──────────┤
-│ masterdb2 │ db1   │ 3306    │    0           │        Running  │              0-3001-4│ MariaDB-Monitor
-├─────────┼─────────┼──────┼─────────────┼─────────────────┼──────────┤
+         
+    
+Server  	 Address         Port	  Connections        	State   	      GTID                        Monitor
+
+masterdb1	 db1        	  3306     	0	 Master, Running               0-3000-4                	MariaDB-Monitor
+masterdb2   	 db12	          3306          0	     Running                   0-3001-4	                MariaDB-Monitor
 
 
 ```
@@ -112,25 +111,19 @@ $ sudo docker-compose stop db1
 [+] stopping 1/1
 container maxscaledocker-db1-1 stopped ... 
 $ docker-compose exec maxscale maxctrl list servers
-┌─────────┬─────────┬──────┬─────────────┬─────────────────┬─────────────┐
-│ Server  │ Address │ Port │ Connections │ State           │ GTID        │   │Monitor
+Server  	 Address         Port	  Connections        	State   	      GTID                        Monitor
 
-├─────────┼─────────┼──────┼─────────────┼─────────────────┼─────────────┤
- masterdb1 │ db1  │ 3306 │ 0            │ Down            │ 0-3000-4    │     MariaDB-Monitor
-├─────────┼─────────┼──────┼─────────────┼─────────────────┼─────────────┤
-│masterdb2 │ db2  │ 3306 │ 0            │  Running        │ 0-3001-4 │        MariaDB-Monitor
-├─────────┼─────────┼──────┼─────────────┼─────────────────┼─────────────┤
+masterdb1	 db1        	  3306     	0	        Down               0-3000-4                	MariaDB-Monitor
+masterdb2   	 db12	          3306          0	       Running             0-3001-4	                MariaDB-Monitor
 
 $ sudo docker-compose start db1
 container maxscaledocker-db1-1 started...
 $ docker-compose exec maxscale maxctrl list servers
-┌─────────┬─────────┬──────┬─────────────┬─────────────────┬─────────────┐
-│ Server  │ Address │ Port │ Connections │ State           │ GTID        │     Monitor
-├─────────┼─────────┼──────┼─────────────┼─────────────────┼─────────────┤
-│ masterdb1 │ db1 │ 3306 │ 0           │ Master, Running  │ 0-3000-4 │        MariaDB-Monitor
-├─────────┼─────────┼──────┼─────────────┼─────────────────┼─────────────┤
-│ masterdb2 │ db2  │ 3306 │ 0           │ Running         │ 0-3001-4│         MariaDB-Monitor
-├─────────┼─────────┼──────┼─────────────┼─────────────────┼─────────────┤
+
+Server  	 Address         Port	  Connections        	State   	      GTID                        Monitor
+
+masterdb1	 db1        	  3306     	0	 Master, Running               0-3000-4                	MariaDB-Monitor
+masterdb2   	 db12	          3306          0	     Running                   0-3001-4	                MariaDB-Monitor
 
 
 ```
