@@ -1,5 +1,9 @@
-import mysql.connector
+# Name:Olakunle Abiola
+# Date:03/19/24
+# Class: CNE370
+# This Python code is a script that interacts with two MySQL databases (zipcodes_one and zipcodes_two) through MaxScale, a database proxy. The databases are structured in a sharded manner, where data is distributed evenly across the databases. 
 
+import mysql.connector
 def query_database(config, query):
     try:
         conn = mysql.connector.connect(**config)
